@@ -5,8 +5,6 @@ const options = {
     'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
   }
 };
-
-
 //function searchMoviesByTitle(title) {
 //const url = `${searchUrlStart}${title}${searchUrlEnd}`;
 // fetch(url, options)
@@ -19,9 +17,6 @@ const options = {
 var movieClicker = document.getElementById('button1')
 const userInput = document.getElementById('search');
 
-
-
-
 movieClicker.addEventListener('click', theButtonWasClicked);
 function theButtonWasClicked() {
   event.preventDefault();
@@ -30,7 +25,7 @@ function theButtonWasClicked() {
   console.log(userInput.value)
 
 
-  myMovieSearchArry = ['https://moviesdatabase.p.rapidapi.com/titles/search/keyword/', inputValue, '?limit=20']
+  myMovieSearchArry = ['https://moviesdatabase.p.rapidapi.com/titles/search/keyword/', inputValue, '?limit=10']
   movieSearchString = myMovieSearchArry.join('')
   console.log(myMovieSearchArry)
   console.log(movieSearchString)
@@ -44,17 +39,12 @@ function theButtonWasClicked() {
 
   alert('Stored!')
 };
-
 /// 
-
-
-
-
 //function that pulls out the array of movie data from local storage 
-//lets called the stored arry "myStoredMovieFavs"
+//lets called the stored arry "seenItStorageArry"
 //lets call the array "MyFavMoviesArry" when it comes out
-let MyFavMoviesArry = JSON.parse(myStoredMovieFavs)
 
+let GottaSeeItMovArry = JSON.parse(GottaSeeItMoviesStorArry)
 //gotta see it list. 
 gottaSeeIt1elem = document.getElementById('GSI1title')
 gottaSeeIt2elem = document.getElementById('GSI2title')
@@ -68,7 +58,7 @@ gottaSeeIt8elem = document.getElementById('GSI8title')
 gottaSeeItElemsArry = [gottaSeeIt1elem, gottaSeeIt2elem, gottaSeeIt3elem, gottaSeeIt4elem, gottaSeeIt5elem, gottaSeeIt6elem, gottaSeeIt7elem, gottaSeeIt8elem] 
  
 //i need to loop over the arrays and draw out the titles of the movies from each object
-MyFavMoviesArry.forEach(function(obj, index) {
+gottaSeeItElemsArry.forEach(function(obj, index) {
   if (index < gottaSeeItElemsArry.length) {
     gottaSeeItElemsArry[index].value = obj.title;
   }
@@ -106,4 +96,65 @@ heartIcons.forEach((heartIcon, index) => {
       heartIcon.src = 'dull-heart.png';
     }
   });
-}); ///idk i hope you guys like this part
+}); ///idk i hope you guys liked that part
+
+//seen it element 
+let seenItArry = JSON.parse(seenItStorageArry)
+
+seenIt1elem = document.getElementById('SeenIt1title')
+seenIt2elem = document.getElementById('SeenIt2title')
+seenIt3elem = document.getElementById('SeenIt3title')
+seenIt4elem = document.getElementById('SeenIt4title')
+seenIt5elem = document.getElementById('SeenIt5title')
+seenIt6elem = document.getElementById('SeenIt6title')
+seenIt7elem = document.getElementById('SeenIt7title')
+seenIt8elem = document.getElementById('SeenIt8title')
+
+seenItElemsArry = [seenIt1elem, seenIt2elem, seenIt3elem, seenIt4elem, seenIt5elem, seenIt6elem, seenIt7elem, seenIt8elem ]
+
+seenItArry.forEach(function(obj, index) {
+  if (index < seenItElemsArry.length) {
+    seenItElemsArry[index].value = obj.title;
+  }
+});
+
+///tv show objects and lists and function over object value
+
+SeenTvElem1 = document.getElementById('seenTv1Title')
+SeenTvElem2 = document.getElementById('seenTv2Title')
+SeenTvElem3 = document.getElementById('seenTv3Title')
+SeenTvElem4 = document.getElementById('seenTv4Title')
+SeenTvElem5 = document.getElementById('seenTv5Title')
+SeenTvElem6 = document.getElementById('seenTv6Title')
+SeenTvElem7 = document.getElementById('seenTv7Title')
+SeenTvElem8 = document.getElementById('seenTv8Title')
+
+seenTvElemsArry = [seenIt1elem, seenIt2elem, seenIt3elem, seenIt4elem, seenIt5elem, seenIt6elem, seenIt7elem, seenIt8elem]
+
+let SeenTvDataArry = JSON.parse('seenTvStoreArry')
+SeenTvDataArry.forEach(function(obj, index) {
+  if (index < seenTvElemsArry.length) {
+    seenTvElemsArry[index].value = obj.title;
+  }
+});
+
+///functions for the gotta see it Tv elements 
+
+gottaSeeTvElem1 = document.getElementById('gottaSeeTv1Title')
+gottaSeeTvElem2 = document.getElementById('gottaSeeTv2Title')
+gottaSeeTvElem3 = document.getElementById('gottaSeeTv3Title')
+gottaSeeTvElem4 = document.getElementById('gottaSeeTv4Title')
+gottaSeeTvElem5 = document.getElementById('gottaSeeTv5Title')
+gottaSeeTvElem6 = document.getElementById('gottaSeeTv6Title')
+gottaSeeTvElem7 = document.getElementById('gottaSeeTv7Title')
+gottaSeeTvElem8 = document.getElementById('gottaSeeTv8Title')
+
+gottaSeeTvElmArry = [gottaSeeTvElem1, gottaSeeTvElem2, gottaSeeTvElem3, gottaSeeTvElem4, gottaSeeTvElem5, gottaSeeTvElem6, gottaSeeTvElem7, gottaSeeTvElem8]
+
+let gottaTvDataArry = JSON.parse('gottaSeeTvStoreArry')
+gottaTvDataArry.forEach(function(obj, index) {
+  if (index < gottaSeeTvElmArry.length) {
+    gottaSeeTvElmArry[index].value = obj.title;
+  }
+})
+
