@@ -1,50 +1,16 @@
-const options = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '9f54f93e1bmsh4f1461416784f68p126072jsn54ef2f5c1d11',
-    'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
-  }
-};
-//function searchMoviesByTitle(title) {
-//const url = `${searchUrlStart}${title}${searchUrlEnd}`;
-// fetch(url, options)
-// .then(response => response.json())
-// .then(data => {
-//  console.log("received")
-//})
-//.catch(error => console.error(error));
-//}
-var movieClicker = document.getElementById('button1')
-const userInput = document.getElementById('search');
-
-movieClicker.addEventListener('click', theButtonWasClicked);
-function theButtonWasClicked() {
-  event.preventDefault();
-  console.log('thebuttonwasclicked')
-  const inputValue = userInput.value;
-  console.log(userInput.value)
+//not sure if i actually need to link this the the site since we already have the data.
 
 
-  myMovieSearchArry = ['https://moviesdatabase.p.rapidapi.com/titles/search/keyword/', inputValue, '?limit=10']
-  movieSearchString = myMovieSearchArry.join('')
-  console.log(myMovieSearchArry)
-  console.log(movieSearchString)
-  fetch(movieSearchString, options)
-    .then(response => response.json())
-    .then(response => {
-      localStorage.setItem('movieSearchResults', JSON.stringify(response));
-      console.log(response);
-    })
-    .catch(err => console.error(err));
+let movieSearchResultsJSON = localStorage.getItem('movieSearchResults');
 
-  alert('Stored!')
-};
-/// 
-//function that pulls out the array of movie data from local storage 
-//lets called the stored arry "seenItStorageArry"
-//lets call the array "MyFavMoviesArry" when it comes out
+let movieResultsArray = JSON.parse(movieSearchResultsJSON);
 
-let GottaSeeItMovArry = JSON.parse(GottaSeeItMoviesStorArry)
+console.log(movieResultsArray);
+
+resultsDisplay = document.getElementById('container')
+
+///////////////////////////////////////////////
+let GottaSeeItMovArry = JSON.parse('GottaSeeItMoviesStorArry')
 //gotta see it list. 
 gottaSeeIt1elem = document.getElementById('GSI1title')
 gottaSeeIt2elem = document.getElementById('GSI2title')
@@ -151,10 +117,4 @@ gottaSeeTvElem8 = document.getElementById('gottaSeeTv8Title')
 
 gottaSeeTvElmArry = [gottaSeeTvElem1, gottaSeeTvElem2, gottaSeeTvElem3, gottaSeeTvElem4, gottaSeeTvElem5, gottaSeeTvElem6, gottaSeeTvElem7, gottaSeeTvElem8]
 
-let gottaTvDataArry = JSON.parse('gottaSeeTvStoreArry')
-gottaTvDataArry.forEach(function(obj, index) {
-  if (index < gottaSeeTvElmArry.length) {
-    gottaSeeTvElmArry[index].value = obj.title;
-  }
-})
 

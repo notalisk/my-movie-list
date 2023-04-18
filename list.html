@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>My Movies and Shows List</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./assets/css/list-script.css">
+
+    <!-- FontAwesome CDN Link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <!-- Google Fonts Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- Materialize CDN Link -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+
+<body>
+    <h1>My Lists</h1>
+
+    <section class="nav">
+        <a class="nav-link" id="movie-link" href="#movie-section">
+            <i class="large material-icons">movie</i>
+            <p>My Movies</p>
+        </a>
+    
+        <a class="nav-link" id="tv-link" href="#tv-section">
+            <i class="large material-icons">tv</i>
+            <p>My TV</p>
+        </a>
+    </section>
+
+    <section class="container" id="movie-section">
+        <h2>Movies</h2>
+        <input type="text" id="search-movies-input" placeholder="Search your movies...">
+        <div>
+            <table class="highlight">
+                <thead>
+                    <tr>
+                        <th id="movieH">Movie</th>
+                        <th id="loveH">Reel-y Love it</th>
+                        <th id="hateH">Reel-y Hate it</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>Movie 1</td>
+                    <td class="love">❤️</td>
+                    <td class="hate">👎</td>
+                </tr>
+                <tr>
+                    <td>Movie 2</td>
+                    <td class="love">❤️</td>
+                    <td class="hate">👎</td>
+                </tr>
+                <tr>
+                    <td>Movie 3</td>
+                    <td class="love">❤️</td>
+                    <td class="hate">👎</td>
+                </tr>
+                <tr>
+                    <td>Movie 4</td>
+                    <td class="love">❤️</td>
+                    <td class="hate">👎</td>
+                </tr>
+                <tr>
+                    <td>Movie 5</td>
+                    <td class="love">❤️</td>
+                    <td class="hate">👎</td>
+                </tr>
+                <tr>
+                    <td>Movie 6</td>
+                    <td class="love">❤️</td>
+                    <td class="hate">👎</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+        
+    <section class="container" id="tv-section">
+        <h2>Shows</h2>
+        <input type="text" id="search-shows-input" placeholder="Search your shows...">
+        <div>
+            <table class="highlight">
+                <thead>
+                    <tr>
+                        <th id="movieH">Show</th>
+                        <th id="loveH">Reel-y Love it</th>
+                        <th id="hateH">Reel-y Hate it</th>
+                    </tr>
+                </thead>
+                <tr>
+                    <td>Show 1</td>
+                    <td class="love">❤️</td>
+                    <td class="hate">👎</td>
+                </tr>
+                <tr>
+                    <td>Show 2</td>
+                    <td class="love">❤️</td>
+                    <td class="hate">👎</td>
+                </tr>
+                <tr>
+                    <td>Show 3</td>
+                    <td class="love">❤️</td>
+                    <td class="hate">👎</td>
+                </tr>
+                <tr>
+                    <td>Show 4</td>
+                    <td class="love">❤️</td>
+                    <td class="hate">👎</td>
+                </tr>
+                <tr>
+                    <td>Show 5</td>
+                    <td class="love">❤️</td>
+                    <td class="hate">👎</td>
+                </tr>
+                <tr>
+                    <td>Show 6</td>
+                    <td class="love">❤️</td>
+                    <td class="hate">👎</td>
+                </tr>
+            </table>
+        </div>
+    </section>
+
+    <!-- JQuery Link -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <!-- Materialize Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <!-- JavaScript -->
+    <script src="./assets/js/list.js"></script>
+  </body>
+</html>
