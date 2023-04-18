@@ -25,36 +25,58 @@ function theClick() {
   event.preventDefault();
   console.log('thebuttonwasclicked')
   const inputValue = userInput.value;
-  if (searchType === "movies") {
-    console.log("Searching for movies...");
-    console.log(userInput.value)
-    myMovieSearchArry = ['https://moviesdatabase.p.rapidapi.com/titles/search/keyword/', inputValue, '?limit=10']
-    movieSearchString = myMovieSearchArry.join('')
-    console.log(myMovieSearchArry)
-    console.log(movieSearchString)
-    fetch(movieSearchString, options)
-      .then(response => response.json())
-      .then(response => {
-        localStorage.setItem('movieSearchResults', JSON.stringify(response));
-        console.log(response);
-      })
-      .catch(err => console.error(err));
-    alert('Stored!')
-  } else {
+  console.log("Searching for movies...");
+  console.log(userInput.value)
+  myMovieSearchArry = ['https://moviesdatabase.p.rapidapi.com/titles/search/keyword/', inputValue, '?limit=10']
+  movieSearchString = myMovieSearchArry.join('')
+  console.log(myMovieSearchArry)
+  console.log(movieSearchString)
+  fetch(movieSearchString, options)
+    .then(response => response.json())
+    .then(response => {
+      localStorage.setItem('movieSearchResults', JSON.stringify(response));
+      console.log(response);
+    })
+    .catch(err => console.error(err));
+  alert('Stored!')
 
-    const options1 = {
-      method: 'GET',
-      headers: {
-        Type: 'get-shows-by-title',
-        'X-RapidAPI-Key': 'b4653a9300msh9edce1d2439a532p1ecf5ejsn6f47fc20c7fd',
-        'X-RapidAPI-Host': 'movies-tv-shows-database.p.rapidapi.com'
-      }
-    };
-    
-    fetch(`https://movies-tv-shows-database.p.rapidapi.com/?title=${inputValue}`, options1)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
-  //need a function to select which option was selected 
-  }
+
+
+}
+//// fetch for later 
+//const options1 = {
+ // method: 'GET',
+//  headers: {
+//    'X-RapidAPI-Key': 'b4653a9300msh9edce1d2439a532p1ecf5ejsn6f47fc20c7fd',
+//    'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
+//  }
+//};
+
+// need a function that calls this api when the div container to the result is clicked 
+//fetch(`https://streaming-availability.p.rapidapi.com/v2/search/title?title=${(variable that takes the title info)}& country=us & show_type=movie & output_language=en`, options)
+//	.then(response => response.json())
+//	.then(response => console.log(response))
+//	.catch(err => console.error(err));
+
+
+
+
+///need a function that indexes over the array and pulls the image urls and populates them into the image containers
+
+
+
+//need a function that loops over the moviesearch array and pulls out the titles 
+
+//need a function that stores saved movies into an array in local storage
+////create the array 
+let myStoredMovies = [];
+
+function storeMovie() {
+  const clickedElement = event.target;
+  const value1 = clickedElement.parentNode.parentNode.dataset.value1;
+  //something like above to get the title of the movie 
+  const value2 = clickedElement.parentNode.dataset.value2;
+  //something like this to get the image url? probably not close syntax tho
+  
+
 }
