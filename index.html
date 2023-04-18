@@ -2,64 +2,23 @@
 <html lang="en">
 
 <head>
-    <title>My Movie List</title>
+    <title>My Movies and Shows List</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- FontAwesome CDN Link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+    <!-- Foundation CDN Link -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.7.5/dist/css/foundation.min.css" crossorigin="anonymous">
 </head>
 
 <body>
-    <ul class="dropdown menu" data-dropdown-menu>
-        <li>
-            <a href="#">Item 1</a>
-            <ul class="menu">
-                <li><a href="#">Item 1A</a></li>
-                <form>
-                    <label for="search">Search:</label>
-                    <input type=" search" id="search" name="search">
-                    <button type="submit" id="button1" data-open="searchResultsPopulate">Search</button>
-                </form>
-                <form id="wholeResultsSection"></form>
-                <section class="resultsSec1">
-                    <img class="imgSection"  id="imgsection1"></img>
-                    <div class="titleSection" id="titleSec1"></div>
-                    <div class="yearSection" id="yearSec1"></div>
-                    <div class="loveIt" id="loveItbttn1">love it?</div>
-                    <div class="addIt" id="addItbttn1">leave it? </div>
-                </section>
-                </div>
-                </div>
-                <section class="resultsSec">
-                    <img class="imgSection" id="imgsection2"></img>
-                    <div class="titleSection" id=titleSec2></div>
-                    <div class="yearSection" id="yearSec2"></div>
-                    <div class="loveIt" id="loveItbttn2">love it?</div>
-                    <div class="addIt" id="addItbttn2">leave it? </div>
-                </section>
-                </div>
-                </div>
-                <section class="resultsSec">
-                    <img class="imgSection" id="imgsection3"></img>
-                    <div class="titleSection" id=titleSec3></div>
-                    <div class="yearSection" id="yearSec3"></div>
-                    <div class="loveIt" id="loveItbttn3">love it?</div>
-                    <div class="addIt" id="addItbttn3">leave it? </div>
-                </section>
-                </div>
-                </div>
-                <section class="resultsSec">
-                    <img class="imgSection" id="imgsection4"></img>
-                    <div class="titleSection" id=titleSec4></div>
-                    <div class="yearSection" id="yearSec4"></div>
-                    <div class="loveIt" id="loveItbttn4">love it?</div>
-                    <div class="addIt" id="addItbttn4">leave it? </div>
-                </section>
-                </div>
-                </div>
-                </form>
-
-
-                <script src="script-index.js"></script>
+    <form>
+        <label for="search"">Search:</label>
+            <input type=" search" id="search" name="search">
+            <button type="submit" id="button1">Search</button>
+    </form>
+    <script src="script-index.js"></script>
 </body>
-
 </html>
