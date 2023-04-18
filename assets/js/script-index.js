@@ -46,6 +46,23 @@ console.log(fixedInput)
 
 
 }
+
+
+///function that stores inputs the results into the containers 
+
+//array for the container elements
+let imgCont1 = document.getElementById('img1')
+let imgCont2 = document.getElementById('img2')
+let imgCont3 = document.getElementById('img3')
+let imgCont4 = document.getElementById('img4')
+let imgCont5 = document.getElementById('img5')
+let imgCont6 = document.getElementById('img6')
+imgContArry = [imgCont1, imgCont2, imgCont3, imgCont5, imgCont6]
+//loop over the elements with the urls
+for (i=0, i < imgContArry.length, i++) {
+  let imgcontArry[i] = results[i].primaryImage.url
+}
+
 //// fetch for later 
 //const options1 = {
  // method: 'GET',
@@ -76,10 +93,16 @@ let myStoredMovies = [];
 
 function storeMovie() {
   const clickedElement = event.target;
-  const value1 = clickedElement.parentNode.parentNode.dataset.value1;
-  //something like above to get the title of the movie 
-  const value2 = clickedElement.parentNode.dataset.value2;
-  //something like this to get the image url? probably not close syntax tho
+  var titleElement = movieElement.querySelector(".title");
+    var movTitle = titleElement.textContent;
+    var imageElement = movieElement.querySelector(".image img");
+    var img = imageElement.getAttribute("src");
 
-
+    let movieItem = {
+      title: movTitle,
+      Imgurl: img,
+    }
+myStoredMovies.unshift(movieItem)
 }
+// hover over an image?? per
+
