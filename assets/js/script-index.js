@@ -18,6 +18,15 @@ var movieClicker = document.getElementById('button1')
 const userInput = document.getElementById('search');
 const selector = document.getElementById('searchType')
 
+//code selects the search button element and all the card elements, and adds an event listener to the search button that changes the display property of each card to block when the button is clicked.
+const searchButton = document.getElementById("button1");
+const cards = document.querySelectorAll(".card");
+
+searchButton.addEventListener("click", () => {
+    cards.forEach(card => {
+        card.style.display = "block";
+    });
+});
 
 
 
