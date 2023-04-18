@@ -20,14 +20,17 @@ const selector = document.getElementById('searchType')
 
 
 
-
+let replacement_symbol = "_"
 function theClick() {
   event.preventDefault();
   console.log('thebuttonwasclicked')
   const inputValue = userInput.value;
   console.log("Searching for movies...");
-  console.log(userInput.value)
-  myMovieSearchArry = ['https://moviesdatabase.p.rapidapi.com/titles/search/keyword/', inputValue, '?limit=10']
+  console.log(inputValue)
+  replacement_symbol = "%20"
+fixedInput = inputValue.replace(" ", replacement_symbol)
+console.log(fixedInput)
+  myMovieSearchArry = ['https://moviesdatabase.p.rapidapi.com/titles/search/title/', fixedInput]
   movieSearchString = myMovieSearchArry.join('')
   console.log(myMovieSearchArry)
   console.log(movieSearchString)
@@ -77,6 +80,6 @@ function storeMovie() {
   //something like above to get the title of the movie 
   const value2 = clickedElement.parentNode.dataset.value2;
   //something like this to get the image url? probably not close syntax tho
-  
+
 
 }
