@@ -17,12 +17,12 @@
     <h1>Welcome to Reelgood</h1>
 
     <form action="./search.html">
-        <input type="text" placeholder="Search">
-        <select>
-            <option value="shows">Series</option>
+        <input type="text" id="search" placeholder="Search">
+        <select id='searchType'>
+            <option value="shows" id="shows">Series</option>
             <option value="movies">Film</option>
         </select>
-        <button type="submit" id="button1">Search</button>
+        <button type="submit" onclick="theClick()" id= "button1">Search</button>
     </form>
 
     <!-- JQuery Link -->
@@ -30,6 +30,6 @@
     <!-- Materialize Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Javascript file -->
-    <script src="script-index.js"></script>
+    <script src="./assets/js/script-index.js"></script>
 </body>
 </html>
