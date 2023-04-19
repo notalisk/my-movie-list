@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>My Movies and Shows List</title>
+    <title>Reelgood - My List</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -32,11 +32,11 @@
         </a>
     </section>
 
-    <section class="container" id="movie-section">
-        <h2>Movies</h2>
-        <input type="text" id="search-movies-input" placeholder="Search your movies...">
+    <section class="container" id="seen-section">
+        <h2>Seen It</h2>
+        <input type="text" id="search-seen-input" placeholder="Search the list...">
         <div>
-            <table class="highlight">
+            <table class="highlight" id="table-seen">
                 <thead>
                     <tr>
                         <th id="movieH">Movie</th>
@@ -44,7 +44,7 @@
                         <th id="hateH">Reel-y Hate it</th>
                     </tr>
                 </thead>
-                <tr>
+                <!-- <tr>
                     <td>Movie 1</td>
                     <td class="love">❤️</td>
                     <td class="hate">👎</td>
@@ -73,28 +73,30 @@
                     <td>Movie 6</td>
                     <td class="love">❤️</td>
                     <td class="hate">👎</td>
-                </tr>
+                </tr> -->
             </table>
         </div>
     </section>
         
-    <section class="container" id="tv-section">
-        <h2>Shows</h2>
-        <input type="text" id="search-shows-input" placeholder="Search your shows...">
+    <section class="container" id="want-section">
+        <h2>Want To See It</h2>
+        <input type="text" id="search-want-input" placeholder="Search the list...">
         <div>
-            <table class="highlight">
+            <table class="highlight" id="table-want">
                 <thead>
                     <tr>
-                        <th id="movieH">Show</th>
+                        <th id="movieH">Movie</th>
                         <th id="loveH">Reel-y Love it</th>
                         <th id="hateH">Reel-y Hate it</th>
                     </tr>
                 </thead>
+                <!-- 
                 <tr>
                     <td>Show 1</td>
                     <td class="love">❤️</td>
                     <td class="hate">👎</td>
                 </tr>
+                
                 <tr>
                     <td>Show 2</td>
                     <td class="love">❤️</td>
@@ -119,7 +121,7 @@
                     <td>Show 6</td>
                     <td class="love">❤️</td>
                     <td class="hate">👎</td>
-                </tr>
+                </tr> -->
             </table>
         </div>
     </section>
@@ -129,6 +131,6 @@
     <!-- Materialize Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- JavaScript -->
-    <script src="./assets/js/list.js"></script>
+    <script src="./assets/js/list.js" defer></script>
   </body>
 </html>
