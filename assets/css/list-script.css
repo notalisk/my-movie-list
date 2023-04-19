@@ -13,3 +13,8 @@ h1 {
   color: rgb(47, 47, 47);
   margin: 0 25px;
 }
+
+.card-image {
+  width: 20px;
+  height: 30px;
+}
