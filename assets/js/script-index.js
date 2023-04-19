@@ -109,20 +109,20 @@ console.log(movieSearchResults)
 
 
 
-
+/*
 let myStoredMovies = [];
 
 function storeMovie(event) {
-  console.log('store funtion is being called')
+  console.log('store function is being called');
   const clickedElement = event.target;
   var titleElement = clickedElement.querySelector(".title");
   var movTitle = titleElement.textContent;
   var imageElement = clickedElement.querySelector(".image img");
   var img = imageElement.getAttribute("src");
 
-  let movieItem = {
+  var movieItem = {
     title: movTitle,
-    Imgurl: img,
+    like: true
   }
 
   myStoredMovies.unshift(movieItem);
@@ -132,4 +132,61 @@ var movieElements = document.querySelectorAll(".movie");
 movieElements.forEach(function(movieElement) {
   movieElement.addEventListener('click', storeMovie);
 });
+*/
+
+$(".store-loved-btn").click(function() {
+  var title = $(this).prev("h3").text();
+  
+  var seenMovie = {
+    title: title,
+    like: true
+  }
+
+  var seenMovies = JSON.parse(localStorage.getItem("seenMovies"));
+
+  if (seenMovies.length == null) {
+    seenMovies = [seenMovie];
+  } else {
+    seenMovies.push(seenMovie);
+  }
+
+  localStorage.setItem("seenMovies", JSON.stringify(seenMovies));
+});
+
+$(".store-hated-btn").click(function() {
+  var title = $(this).siblings("h3").text();
+  console.log(title);
+  
+  var seenMovie = {
+    title: title,
+    like: false
+  }
+
+  var seenMovies = JSON.parse(localStorage.getItem("seenMovies"));
+
+  if (seenMovies.length == null) {
+    seenMovies = [seenMovie];
+  } else {
+    seenMovies.push(seenMovie);
+  }
+
+  localStorage.setItem("seenMovies", JSON.stringify(seenMovies));
+});
+
+$(".store-want-btn").click(function() {
+  var title = $(this).siblings("h3").text();
+  
+  var wantMovie = title;
+
+  var wantMovies = JSON.parse(localStorage.getItem("wantMovies"));
+
+  if (wantMovies.length == null) {
+    wantMovies = [wantMovie];
+  } else {
+    wantMovies.push(wantMovie);
+  }
+
+  localStorage.setItem("wantMovies", JSON.stringify(wantMovies));
+});
+
 //
