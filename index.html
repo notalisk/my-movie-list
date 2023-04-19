@@ -44,22 +44,34 @@
     <form>
         <input type="text" id="search" placeholder="Search">
         <select id='searchType'>
-            <option value="shows" id="shows">Series</option>
-            <option value="movies">Film</option>
-        </select>
-        <button type="button" id="button1">Search</button>
+             </select>
+        <button type="button" id="button1" onclick="theClick()">Search</button>
     </form>
 
     <div class="card" style="display:none">
-        <img src="card1.jpg" alt="Card 1">
+        <img src="" id="card1" alt="Card 1">
+        <h3 class="movie" id="title1"></h3>
+    </div>
+    
+    <div class="card" style="display:none">
+        <img src="" id="card2" alt="Card 2">
+        <h3 class="movie" id="title2"></h3>
+    </div>
+    
+    <div class="card" style="display:none">
+        <img src="" id="card3" alt="Card 3">
+        <h3 class="movie" id="title3"></h3>
     </div>
 
     <div class="card" style="display:none">
-        <img src="card2.jpg" alt="Card 2">
+        <img src="" id="card4" alt="Card 4">
+        <h3 class="movie" id="title4"></h3>
     </div>
-
+    
+    <!-- Card 5 -->
     <div class="card" style="display:none">
-        <img src="card3.jpg" alt="Card 3">
+        <img src="" id="card5" alt="Card 5">
+        <h3 class="movie" id="title5"></h3>
     </div>
 
     <script src="./assets/js/script-index.js"></script>
@@ -71,7 +83,7 @@
     <!-- Materialize Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <!-- Javascript file -->
-    <script src="./assets/js/script-index.js"></script>
+   
 
     <script>
         function showCards() {
