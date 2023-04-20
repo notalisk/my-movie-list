@@ -3,30 +3,14 @@
 
 <head>
     <title>Reelgood</title>
-    <style>
-        /* Style the link */
-        .my-list {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            color: black;
-            text-decoration: underline;
-        }
-
-        /* Hide the cards by default */
-        .card {
-            display: none;
-        }
-
-        /* Show the cards when the search button is clicked */
-        .show-card {
-            display: block;
-        }
-    </style>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- Font links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
     <!-- FontAwesome CDN Link -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
     <!-- Materialize CDN Link -->
@@ -36,71 +20,74 @@
 
 
 <body>
-    <a href="./list.html" class="my-list">My List</a>
-    <h1>Welcome to </h1>
-    <img class="logo" src="./assets/Images/Reel_Good_Database.png" alt="ReelGood logo">
+    <section class="main">
+        <section class="container" id="header-container">
+            <h1>Welcome to </h1>
+            <img class="logo" src="./assets/Images/Reel_Good_Database_2.png" alt="ReelGood logo">
+            <a href="./list.html" class="my-list waves-effect waves-light btn-large reel-good-button">View My List</a>
 
-<section class="container">
-    <form>
-        <input type="text" id="search" placeholder="Search">
-        <select id='searchType'>
-        </select>
-        <button type="button" id="button1" class="waves-effect waves-light btn" onclick="theClick()">Search</button>
-    </form>
+            <form>
+                <input type="text" id="search" placeholder="Search">
+                <button type="button" id="button1" class="waves-effect waves-light btn reel-good-button"
+                    onclick="theClick()">Search</button>
+            </form>
+        </section>
 
-    <div class="card" style="display:none">
-       
-        <img src="" id="card1" class="card-img"  alt="Card 1">
-        <h3 class="movie" id="title1"></h3>
-        <!-- <input class="rating"> -->
-        <button class="store-loved-btn waves-effect waves-light btn">Seen it (Love)</button>
-        <button class="store-hated-btn waves-effect waves-light btn">Seen it (Hate)</button>
-        <button class="store-want-btn waves-effect waves-light btn">Want to see</button>
-        <button class="stream-btn waves-effect waves-light btn">Streaming Options</button>
-    </div>
+        <section class="results">
+        <div class="card" style="display:none">
 
-    <div class="card" style="display:none">
-        
-        <img src="" id="card2" class="card-img" alt="Card 2">
-        <h3 class="movie" id="title2"></h3>
-        <!-- <input class="rating"> -->
-        <button class="store-loved-btn waves-effect waves-light btn">Seen it (Love)</button>
-        <button class="store-hated-btn waves-effect waves-light btn">Seen it (Hate)</button>
-        <button class="store-want-btn waves-effect waves-light btn">Want to see</button>
-        <button class="stream-btn waves-effect waves-light btn">Streaming Options</button>
-    </div>
+            <img src="" id="card1" class="card-img" alt="Card 1">
+            <h3 class="movie" id="title1"></h3>
+            <!-- <input class="rating"> -->
+            <button class="store-loved-btn waves-effect waves-light btn reel-good-button">Seen it (Love)</button>
+            <button class="store-hated-btn waves-effect waves-light btn reel-good-button">Seen it (Hate)</button>
+            <button class="store-want-btn waves-effect waves-light btn reel-good-button">Want to see</button>
+            <button class="stream-btn waves-effect waves-light btn reel-good-button">Streaming Options</button>
+        </div>
 
-    <div class="card" style="display:none">
-        <img src="" id="card3" class="card-img" alt="Card 3">
-        <h3 class="movie" id="title3"></h3>
-        <!-- <input class="rating"> -->
-        <button class="store-loved-btn waves-effect waves-light btn">Seen it (Love)</button>
-        <button class="store-hated-btn waves-effect waves-light btn">Seen it (Hate)</button>
-        <button class="store-want-btn waves-effect waves-light btn">Want to see</button>
-        <button class="stream-btn waves-effect waves-light btn">Streaming Options</button>
-    </div>
+        <div class="card" style="display:none">
 
-    <div class="card" style="display:none">
-        <img src="" id="card4"class="card-img"  alt="Card 4">
-        <h3 class="movie-image" id="title4"></h3>
-        <!-- <input class="rating"> -->
-        <button class="store-loved-btn waves-effect waves-light btn">Seen it (Love)</button>
-        <button class="store-hated-btn waves-effect waves-light btn">Seen it (Hate)</button>
-        <button class="store-want-btn waves-effect waves-light btn">Want to see</button>
-        <button class="stream-btn waves-effect waves-light btn">Streaming Options</button>
-    </div>
+            <img src="" id="card2" class="card-img" alt="Card 2">
+            <h3 class="movie" id="title2"></h3>
+            <!-- <input class="rating"> -->
+            <button class="store-loved-btn waves-effect waves-light btn reel-good-button">Seen it (Love)</button>
+            <button class="store-hated-btn waves-effect waves-light btn reel-good-button">Seen it (Hate)</button>
+            <button class="store-want-btn waves-effect waves-light btn reel-good-button">Want to see</button>
+            <button class="stream-btn waves-effect waves-light btn reel-good-button">Streaming Options</button>
+        </div>
 
-    <!-- Card 5 -->
-    <div class="card" style="display:none">
-        <img src="" id="card5" class="card-img"  alt="Card 5">
-        <h3 class="movie" id="title5"></h3>
-        <!-- <input class="rating"> -->
-        <button class="store-loved-btn waves-effect waves-light btn">Seen it (Love)</button>
-        <button class="store-hated-btn waves-effect waves-light btn">Seen it (Hate)</button>
-        <button class="store-want-btn waves-effect waves-light btn">Want to see</button>
-        <button class="stream-btn waves-effect waves-light btn">Streaming Options</button>
-    </div>
-</section>
+        <div class="card" style="display:none">
+            <img src="" id="card3" class="card-img" alt="Card 3">
+            <h3 class="movie" id="title3"></h3>
+            <!-- <input class="rating"> -->
+            <button class="store-loved-btn waves-effect waves-light btn reel-good-button">Seen it (Love)</button>
+            <button class="store-hated-btn waves-effect waves-light btn reel-good-button">Seen it (Hate)</button>
+            <button class="store-want-btn waves-effect waves-light btn reel-good-button">Want to see</button>
+            <button class="stream-btn waves-effect waves-light btn reel-good-button">Streaming Options</button>
+        </div>
+
+        <div class="card" style="display:none">
+            <img src="" id="card4" class="card-img" alt="Card 4">
+            <h3 class="movie-image" id="title4"></h3>
+            <!-- <input class="rating"> -->
+            <button class="store-loved-btn waves-effect waves-light btn reel-good-button">Seen it (Love)</button>
+            <button class="store-hated-btn waves-effect waves-light btn reel-good-button">Seen it (Hate)</button>
+            <button class="store-want-btn waves-effect waves-light btn reel-good-button">Want to see</button>
+            <button class="stream-btn waves-effect waves-light btn reel-good-button">Streaming Options</button>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="card" style="display:none">
+            <img src="" id="card5" class="card-img" alt="Card 5">
+            <h3 class="movie" id="title5"></h3>
+            <!-- <input class="rating"> -->
+            <button class="store-loved-btn waves-effect waves-light btn reel-good-button">Seen it (Love)</button>
+            <button class="store-hated-btn waves-effect waves-light btn reel-good-button">Seen it (Hate)</button>
+            <button class="store-want-btn waves-effect waves-light btn reel-good-button">Want to see</button>
+            <button class="stream-btn waves-effect waves-light btn reel-good-button">Streaming Options</button>
+        </div>
+    </section>
+    </section>
 
     <!-- JQuery Link -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

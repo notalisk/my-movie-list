@@ -4,11 +4,25 @@
   --cool-gray-2: #aaadc4ff;
   --columbia-blue: #d6eeffff;
   --red-pantone: #e71d36ff;
+  --font-inter: 'Inter', sans-serif;;
+  --font-weight: 300;
+}
+
+body {
+  background-color: var(--gunmetal);
+  font-family: var(--font-inter);
+  font-weight: var(--font-weight);
 }
 
 h1 {
     display: flex;
     justify-content: center;
+    color: #fff;
+    font-weight: var(--font-weight);
+}
+
+h3, p {
+  color: #fff;
 }
 
 img {
@@ -16,12 +30,88 @@ img {
   margin: 0 auto;
 }
 
+input {
+  color: #fff !important;
+}
+
+input:focus {
+  background-color: var(--gunmetal);
+  color: #fff;
+  border-bottom-color: var(--red-pantone);
+}
+
+input:enabled {
+  color: #fff !important;
+}
+
+/* Change the autofill color to match the background */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--gunmetal) inset !important;
+    -webkit-text-fill-color: #fff;
+}
+
 form {
-  width: 25%;
+  width: 50%;
   margin: auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--gunmetal);
+  max-width: fit-content;
+  text-align: center;
+  padding: 10px;
+}
+
+.results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+/* Style the link */
+.my-list {
+  text-decoration: none;
+  width: 25%;
+  margin: 15px;
+  margin-top: 5%;
+}
+
+.reel-good-button {
+  background-color: var(--gunmetal);
+  border: 1px solid var(--red-pantone);
+}
+
+.reel-good-button:hover {
+  background-color: var(--red-pantone);
+}
+
+/* Hide the cards by default */
+.card {
+  display: none;
+}
+
+/* Show the cards when the search button is clicked */
+.show-card {
+  display: block;
 }
 
 .card-img {
   width: 160px;
-  height: 170px;
+}
+
+#header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#search {
+  width: 50%;
 }
