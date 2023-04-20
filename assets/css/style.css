@@ -1,5 +1,10 @@
-
-
+:root {
+  --gunmetal: #2f323aff;
+  --cool-gray: #8d909bff;
+  --cool-gray-2: #aaadc4ff;
+  --columbia-blue: #d6eeffff;
+  --red-pantone: #e71d36ff;
+}
 
 h1 {
     display: flex;
