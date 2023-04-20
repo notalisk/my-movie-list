@@ -2,7 +2,7 @@ var movieClicker = document.getElementById('button1')
 const userInput = document.getElementById('search');
 const selector = document.getElementById('searchType')
 
-//code selects the search button element and all the card elements, and adds an event listener to the search button that changes the display property of each card to block when the button is clicked.
+
 const searchButton = document.getElementById("button1");
 const cards = document.querySelectorAll(".card");
 
@@ -71,12 +71,12 @@ function pushResults() {
   let titleArray = [title1, title2, title3, title4, title5];
 
 
-  // Get movieSearchResults from local storage
+  
   let movieSearchResults = JSON.parse(localStorage.getItem('movieSearchResults'));
 console.log(movieSearchResults)
-  // Loop over the elements with the URLs
+ 
   for (let i = 0; i < imgContArry.length; i++) {
-    // Check if the movieSearchResults array has enough items to populate all the cards
+   
     if (movieSearchResults && movieSearchResults.results.length > i && movieSearchResults.results[i].poster_path) {
       imgContArry[i].src = `https://image.tmdb.org/t/p/original/${movieSearchResults.results[i].poster_path}`;
     } else {
@@ -84,55 +84,15 @@ console.log(movieSearchResults)
     }
   }
   for (let i = 0; i < titleArray.length; i++) {
-    // Check if the movieSearchResults array has enough items to populate all the titles
+   
     if (movieSearchResults && movieSearchResults.results.length > i && movieSearchResults.results[i].title) {
       titleArray[i].textContent = movieSearchResults.results[i].title;
     } else {
-      titleArray[i].textContent = ''; // Set empty text if no title is available
+      titleArray[i].textContent = ''; 
     }
   }
 }
-//// fetch for later 
-//const options1 = {
-// method: 'GET',
-//  headers: {
-//    'X-RapidAPI-Key': 'b4653a9300msh9edce1d2439a532p1ecf5ejsn6f47fc20c7fd',
-//    'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
-//  }
-//};
 
-// need a function that calls this api when the div container to the result is clicked 
-//fetch(`https://streaming-availability.p.rapidapi.com/v2/search/title?title=${(variable that takes the title info)}& country=us & show_type=movie & output_language=en`, options)
-//	.then(response => response.json())
-//	.then(response => console.log(response))
-//	.catch(err => console.error(err));
-
-
-
-/*
-let myStoredMovies = [];
-
-function storeMovie(event) {
-  console.log('store function is being called');
-  const clickedElement = event.target;
-  var titleElement = clickedElement.querySelector(".title");
-  var movTitle = titleElement.textContent;
-  var imageElement = clickedElement.querySelector(".image img");
-  var img = imageElement.getAttribute("src");
-
-  var movieItem = {
-    title: movTitle,
-    like: true
-  }
-
-  myStoredMovies.unshift(movieItem);
-  localStorage.setItem('myMovies', JSON.stringify(myStoredMovies));
-}
-var movieElements = document.querySelectorAll(".movie");
-movieElements.forEach(function(movieElement) {
-  movieElement.addEventListener('click', storeMovie);
-});
-*/
 
 $(".store-loved-btn").click(function() {
   var title = $(this).prev("h3").text();
@@ -189,4 +149,3 @@ $(".store-want-btn").click(function() {
   localStorage.setItem("wantMovies", JSON.stringify(wantMovies));
 });
 
-//

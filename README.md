@@ -10,6 +10,7 @@ This is a web application that allows users to search for movies, add them to th
 
 
 
+
 ## Usage
 
 Here's how you can use the Movie Watchlist web app:
