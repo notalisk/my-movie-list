@@ -44,8 +44,8 @@ function theClick() {
       localStorage.setItem('movieSearchResults', JSON.stringify(response));
       pushResults();
     })
-    .catch(err => console.error(err));
-  alert('Stored!');
+  //   .catch(err => console.error(err));
+  // alert('Stored!');
  
 
 
