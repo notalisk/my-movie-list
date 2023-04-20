@@ -1,3 +1,11 @@
+:root {
+  --gunmetal: #2f323aff;
+  --cool-gray: #8d909bff;
+  --cool-gray-2: #aaadc4ff;
+  --columbia-blue: #d6eeffff;
+  --red-pantone: #e71d36ff;
+}
+
 h1 {
   display: flex;
   justify-content: center;
@@ -12,4 +20,9 @@ h1 {
 .nav a {
   color: rgb(47, 47, 47);
   margin: 0 25px;
+} 
+
+.nav-link i {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 10);
 }
+
