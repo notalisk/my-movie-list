@@ -1,160 +1,196 @@
-const options = {
-  method: 'GET',
-  headers: {
-    'X-RapidAPI-Key': '9f54f93e1bmsh4f1461416784f68p126072jsn54ef2f5c1d11',
-    'X-RapidAPI-Host': 'moviesdatabase.p.rapidapi.com'
-  }
-};
-//function searchMoviesByTitle(title) {
-//const url = `${searchUrlStart}${title}${searchUrlEnd}`;
-// fetch(url, options)
-// .then(response => response.json())
-// .then(data => {
-//  console.log("received")
-//})
-//.catch(error => console.error(error));
-//}
 var movieClicker = document.getElementById('button1')
 const userInput = document.getElementById('search');
+const selector = document.getElementById('searchType')
 
-movieClicker.addEventListener('click', theButtonWasClicked);
-function theButtonWasClicked() {
+//code selects the search button element and all the card elements, and adds an event listener to the search button that changes the display property of each card to block when the button is clicked.
+const searchButton = document.getElementById("button1");
+const cards = document.querySelectorAll(".card");
+
+searchButton.addEventListener("click", () => {
+  cards.forEach(card => {
+    card.style.display = "block";
+  });
+});
+
+
+let replacement_symbol = "_"
+
+
+function theClick() {
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': 'b4653a9300msh9edce1d2439a532p1ecf5ejsn6f47fc20c7fd',
+      'X-RapidAPI-Host': 'advanced-movie-search.p.rapidapi.com'
+    }
+  };
+
   event.preventDefault();
   console.log('thebuttonwasclicked')
   const inputValue = userInput.value;
-  console.log(userInput.value)
-
-
-  myMovieSearchArry = ['https://moviesdatabase.p.rapidapi.com/titles/search/keyword/', inputValue, '?limit=10']
+  console.log("Searching for movies...");
+  console.log(inputValue)
+  replacement_symbol = "%20"
+  fixedInput = inputValue.replace(" ", replacement_symbol)
+  console.log(fixedInput)
+  myMovieSearchArry = ['https://advanced-movie-search.p.rapidapi.com/search/movie?query=', fixedInput,'&page=1']
   movieSearchString = myMovieSearchArry.join('')
   console.log(myMovieSearchArry)
   console.log(movieSearchString)
   fetch(movieSearchString, options)
     .then(response => response.json())
     .then(response => {
+      console.log(response)
       localStorage.setItem('movieSearchResults', JSON.stringify(response));
-      console.log(response);
+      pushResults();
     })
     .catch(err => console.error(err));
-
-  alert('Stored!')
-};
-/// 
-//function that pulls out the array of movie data from local storage 
-//lets called the stored arry "seenItStorageArry"
-//lets call the array "MyFavMoviesArry" when it comes out
-
-let GottaSeeItMovArry = JSON.parse(GottaSeeItMoviesStorArry)
-//gotta see it list. 
-gottaSeeIt1elem = document.getElementById('GSI1title')
-gottaSeeIt2elem = document.getElementById('GSI2title')
-gottaSeeIt3elem = document.getElementById('GSI3title')
-gottaSeeIt4elem = document.getElementById('GSI4title')
-gottaSeeIt5elem = document.getElementById('GSI5title')
-gottaSeeIt6elem = document.getElementById('GSI6title')
-gottaSeeIt7elem = document.getElementById('GSI7title')
-gottaSeeIt8elem = document.getElementById('GSI8title')
-
-gottaSeeItElemsArry = [gottaSeeIt1elem, gottaSeeIt2elem, gottaSeeIt3elem, gottaSeeIt4elem, gottaSeeIt5elem, gottaSeeIt6elem, gottaSeeIt7elem, gottaSeeIt8elem] 
+  alert('Stored!');
  
-//i need to loop over the arrays and draw out the titles of the movies from each object
-gottaSeeItElemsArry.forEach(function(obj, index) {
-  if (index < gottaSeeItElemsArry.length) {
-    gottaSeeItElemsArry[index].value = obj.title;
-  }
-});
 
-//love it hate it icons? ask team if we can maybe switch it to just an icon 
-heartIcon1 = document.getElementById('heart1')
-heartIcon2 = document.getElementById('heart2')
-heartIcon3 = document.getElementById('heart3')
-heartIcon4 = document.getElementById('heart4')
-heartIcon5 = document.getElementById('heart5')
-heartIcon6 = document.getElementById('heart6')
-heartIcon7 = document.getElementById('heart7')
-heartIcon8 = document.getElementById('heart8')
-heartIcon9 = document.getElementById('heart9')
 
-const heartIcons = document.querySelectorAll('img[id^="heart"]');
-heartIcons.forEach(function(icon) {
-  icon.addEventListener('click', function() {
-    icon.src = 'heart-filled.png';
-  });
-}); /// i figured we can just add a little heart emoji thing  and a dull one. when u click it, then a brighter one will appear in its stead. i will write a function to save its status
+}
 
-//maybe this function is too hard... 
 
-heartIcons.forEach((heartIcon, index) => {
-  heartIcon.addEventListener('click', () => {
-    // Toggle the "isLiked" property of its movie object
-    MyFavMoviesArry[index].isLiked = !MyFavMoviesArry[index].isLiked;
+function pushResults() {
+  // Array for the container elements
+  let imgCont1 = document.getElementById('card1');
+  let imgCont2 = document.getElementById('card2');
+  let imgCont3 = document.getElementById('card3');
+  let imgCont4 = document.getElementById('card4');
+  let imgCont5 = document.getElementById('card5');
 
-    // Update the heart icon image based on the new "isLiked" status
-    if (movies[index].isLiked) {
-      heartIcon.src = 'liked-heart.png';
+  let imgContArry = [imgCont1, imgCont2, imgCont3, imgCont4, imgCont5];
+  
+  let title1 = document.getElementById('title1');
+  let title2 = document.getElementById('title2');
+  let title3 = document.getElementById('title3');
+  let title4 = document.getElementById('title4');
+  let title5 = document.getElementById('title5');
+
+  let titleArray = [title1, title2, title3, title4, title5];
+
+
+  // Get movieSearchResults from local storage
+  let movieSearchResults = JSON.parse(localStorage.getItem('movieSearchResults'));
+console.log(movieSearchResults)
+  // Loop over the elements with the URLs
+  for (let i = 0; i < imgContArry.length; i++) {
+    // Check if the movieSearchResults array has enough items to populate all the cards
+    if (movieSearchResults && movieSearchResults.results.length > i && movieSearchResults.results[i].poster_path) {
+      imgContArry[i].src = `https://image.tmdb.org/t/p/original/${movieSearchResults.results[i].poster_path}`;
     } else {
-      heartIcon.src = 'dull-heart.png';
+      imgContArry[i].src= " "
     }
-  });
-}); ///idk i hope you guys liked that part
-
-//seen it element 
-let seenItArry = JSON.parse(seenItStorageArry)
-
-seenIt1elem = document.getElementById('SeenIt1title')
-seenIt2elem = document.getElementById('SeenIt2title')
-seenIt3elem = document.getElementById('SeenIt3title')
-seenIt4elem = document.getElementById('SeenIt4title')
-seenIt5elem = document.getElementById('SeenIt5title')
-seenIt6elem = document.getElementById('SeenIt6title')
-seenIt7elem = document.getElementById('SeenIt7title')
-seenIt8elem = document.getElementById('SeenIt8title')
-
-seenItElemsArry = [seenIt1elem, seenIt2elem, seenIt3elem, seenIt4elem, seenIt5elem, seenIt6elem, seenIt7elem, seenIt8elem ]
-
-seenItArry.forEach(function(obj, index) {
-  if (index < seenItElemsArry.length) {
-    seenItElemsArry[index].value = obj.title;
   }
+  for (let i = 0; i < titleArray.length; i++) {
+    // Check if the movieSearchResults array has enough items to populate all the titles
+    if (movieSearchResults && movieSearchResults.results.length > i && movieSearchResults.results[i].title) {
+      titleArray[i].textContent = movieSearchResults.results[i].title;
+    } else {
+      titleArray[i].textContent = ''; // Set empty text if no title is available
+    }
+  }
+}
+//// fetch for later 
+//const options1 = {
+// method: 'GET',
+//  headers: {
+//    'X-RapidAPI-Key': 'b4653a9300msh9edce1d2439a532p1ecf5ejsn6f47fc20c7fd',
+//    'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
+//  }
+//};
+
+// need a function that calls this api when the div container to the result is clicked 
+//fetch(`https://streaming-availability.p.rapidapi.com/v2/search/title?title=${(variable that takes the title info)}& country=us & show_type=movie & output_language=en`, options)
+//	.then(response => response.json())
+//	.then(response => console.log(response))
+//	.catch(err => console.error(err));
+
+
+
+/*
+let myStoredMovies = [];
+
+function storeMovie(event) {
+  console.log('store function is being called');
+  const clickedElement = event.target;
+  var titleElement = clickedElement.querySelector(".title");
+  var movTitle = titleElement.textContent;
+  var imageElement = clickedElement.querySelector(".image img");
+  var img = imageElement.getAttribute("src");
+
+  var movieItem = {
+    title: movTitle,
+    like: true
+  }
+
+  myStoredMovies.unshift(movieItem);
+  localStorage.setItem('myMovies', JSON.stringify(myStoredMovies));
+}
+var movieElements = document.querySelectorAll(".movie");
+movieElements.forEach(function(movieElement) {
+  movieElement.addEventListener('click', storeMovie);
+});
+*/
+
+$(".store-loved-btn").click(function() {
+  var title = $(this).prev("h3").text();
+  var rating = $(this).siblings("input").val();
+  var seenMovie = {
+    title: title,
+    like: true,
+    rating: rating, 
+  }
+
+  var seenMovies = JSON.parse(localStorage.getItem("seenMovies"))||[]
+
+  if (seenMovies.length == null) {
+    seenMovies = [seenMovie];
+  } else {
+    seenMovies.push(seenMovie);
+  }
+
+  localStorage.setItem("lovedMovies", JSON.stringify(seenMovies));
 });
 
-///tv show objects and lists and function over object value
-
-SeenTvElem1 = document.getElementById('seenTv1Title')
-SeenTvElem2 = document.getElementById('seenTv2Title')
-SeenTvElem3 = document.getElementById('seenTv3Title')
-SeenTvElem4 = document.getElementById('seenTv4Title')
-SeenTvElem5 = document.getElementById('seenTv5Title')
-SeenTvElem6 = document.getElementById('seenTv6Title')
-SeenTvElem7 = document.getElementById('seenTv7Title')
-SeenTvElem8 = document.getElementById('seenTv8Title')
-
-seenTvElemsArry = [seenIt1elem, seenIt2elem, seenIt3elem, seenIt4elem, seenIt5elem, seenIt6elem, seenIt7elem, seenIt8elem]
-
-let SeenTvDataArry = JSON.parse('seenTvStoreArry')
-SeenTvDataArry.forEach(function(obj, index) {
-  if (index < seenTvElemsArry.length) {
-    seenTvElemsArry[index].value = obj.title;
+$(".store-hated-btn").click(function() {
+  var title = $(this).siblings("h3").text();
+  console.log(title);
+  var rating = $(this).siblings("input").val();
+  
+  var seenMovie = {
+    title: title,
+    like: false,
+    rating: rating, 
   }
+
+  var seenMovies = JSON.parse(localStorage.getItem("seenMovies"))||[]
+
+  if (seenMovies.length == null) {
+    seenMovies = [seenMovie];
+  } else {
+    seenMovies.push(seenMovie);
+  }
+
+  localStorage.setItem("hateMovies", JSON.stringify(seenMovies));
 });
 
-///functions for the gotta see it Tv elements 
+$(".store-want-btn").click(function() {
+  var title = $(this).siblings("h3").text();
+  
+  
+  var wantMovie = title;
 
-gottaSeeTvElem1 = document.getElementById('gottaSeeTv1Title')
-gottaSeeTvElem2 = document.getElementById('gottaSeeTv2Title')
-gottaSeeTvElem3 = document.getElementById('gottaSeeTv3Title')
-gottaSeeTvElem4 = document.getElementById('gottaSeeTv4Title')
-gottaSeeTvElem5 = document.getElementById('gottaSeeTv5Title')
-gottaSeeTvElem6 = document.getElementById('gottaSeeTv6Title')
-gottaSeeTvElem7 = document.getElementById('gottaSeeTv7Title')
-gottaSeeTvElem8 = document.getElementById('gottaSeeTv8Title')
+  var wantMovies = JSON.parse(localStorage.getItem("wantMovies"))||[]
 
-gottaSeeTvElmArry = [gottaSeeTvElem1, gottaSeeTvElem2, gottaSeeTvElem3, gottaSeeTvElem4, gottaSeeTvElem5, gottaSeeTvElem6, gottaSeeTvElem7, gottaSeeTvElem8]
-
-let gottaTvDataArry = JSON.parse('gottaSeeTvStoreArry')
-gottaTvDataArry.forEach(function(obj, index) {
-  if (index < gottaSeeTvElmArry.length) {
-    gottaSeeTvElmArry[index].value = obj.title;
+  if (wantMovies.length == null) {
+    wantMovies = [wantMovie];
+  } else {
+    wantMovies.push(wantMovie);
   }
-})
 
+  localStorage.setItem("wantMovies", JSON.stringify(wantMovies));
+});
+
+//
