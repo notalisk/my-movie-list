@@ -26,21 +26,21 @@ function theClick() {
   };
 
   event.preventDefault();
-  console.log('thebuttonwasclicked')
+  //console.log('thebuttonwasclicked')
   const inputValue = userInput.value;
-  console.log("Searching for movies...");
-  console.log(inputValue)
+  //console.log("Searching for movies...");
+  //console.log(inputValue)
   replacement_symbol = "%20"
   fixedInput = inputValue.replace(" ", replacement_symbol)
-  console.log(fixedInput)
+  //console.log(fixedInput)
   myMovieSearchArry = ['https://advanced-movie-search.p.rapidapi.com/search/movie?query=', fixedInput,'&page=1']
   movieSearchString = myMovieSearchArry.join('')
-  console.log(myMovieSearchArry)
-  console.log(movieSearchString)
+  //console.log(myMovieSearchArry)
+  //console.log(movieSearchString)
   fetch(movieSearchString, options)
     .then(response => response.json())
     .then(response => {
-      console.log(response)
+      // console.log(response)
       localStorage.setItem('movieSearchResults', JSON.stringify(response));
       pushResults();
     })
@@ -85,7 +85,7 @@ function pushResults() {
 
   // Get movieSearchResults from local storage
   let movieSearchResults = JSON.parse(localStorage.getItem('movieSearchResults'));
-console.log(movieSearchResults)
+  console.log(movieSearchResults);
   // Loop over the elements with the URLs
   for (let i = 0; i < imgContArry.length; i++) {
     // Check if the movieSearchResults array has enough items to populate all the cards
@@ -104,6 +104,35 @@ console.log(movieSearchResults)
     }
   }
 }
+
+// Get streaming services
+$(".stream-btn").click(function() {
+  var title = $(this).siblings("h3").text();
+  var parent = $(this).parent(".card");
+
+  const options = {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Key': '23ba83f50amsh2809e1dd2658e65p1653c7jsnd62035b3967b',
+      'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
+    }
+  };
+
+  fetch('https://streaming-availability.p.rapidapi.com/v2/search/title?title=' + title + '&country=us&show_type=movie&output_language=en', options)
+    .then(response => response.json())
+    .then(response => {
+      var streaming = response.result[0].streamingInfo.us;
+
+      Object.keys(streaming).forEach(function(key, i) {
+        var optionEl = document.createElement("p");
+        optionEl.textContent = key;
+        
+        parent[0].appendChild(optionEl);
+      });
+    })
+    .catch(err => console.error(err));
+});
+
 //// fetch for later 
 //const options1 = {
 // method: 'GET',
@@ -147,7 +176,7 @@ movieElements.forEach(function(movieElement) {
 */
 
 $(".store-loved-btn").click(function() {
-  var title = $(this).prev("h3").text();
+  var title = $(this).siblings("h3").text();
   var rating = $(this).siblings("input").val();
   var seenMovie = {
     title: title,
@@ -163,12 +192,12 @@ $(".store-loved-btn").click(function() {
     seenMovies.push(seenMovie);
   }
 
-  localStorage.setItem("lovedMovies", JSON.stringify(seenMovies));
+  localStorage.setItem("seenMovies", JSON.stringify(seenMovies));
 });
 
 $(".store-hated-btn").click(function() {
   var title = $(this).siblings("h3").text();
-  console.log(title);
+  //console.log(title);
   var rating = $(this).siblings("input").val();
   
   var seenMovie = {
@@ -185,7 +214,7 @@ $(".store-hated-btn").click(function() {
     seenMovies.push(seenMovie);
   }
 
-  localStorage.setItem("hateMovies", JSON.stringify(seenMovies));
+  localStorage.setItem("seenMovies", JSON.stringify(seenMovies));
 });
 
 $(".store-want-btn").click(function() {
