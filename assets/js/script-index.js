@@ -44,31 +44,43 @@ function theClick() {
       localStorage.setItem('movieSearchResults', JSON.stringify(response));
       pushResults();
     })
-    .catch(err => console.error(err));
-  alert('Stored!');
+  //   .catch(err => console.error(err));
+  // alert('Stored!');
  
 
 
 }
 
 
-function pushResults() {
-  // Array for the container elements
-  let imgCont1 = document.getElementById('card1');
-  let imgCont2 = document.getElementById('card2');
-  let imgCont3 = document.getElementById('card3');
-  let imgCont4 = document.getElementById('card4');
-  let imgCont5 = document.getElementById('card5');
+// function pushResults() {
+//   // Array for the container elements
+//   let imgCont1 = document.getElementById('card1');
+//   let imgCont2 = document.getElementById('card2');
+//   let imgCont3 = document.getElementById('card3');
+//   let imgCont4 = document.getElementById('card4');
+//   let imgCont5 = document.getElementById('card5');
 
-  let imgContArry = [imgCont1, imgCont2, imgCont3, imgCont4, imgCont5];
+//   let imgContArry = [imgCont1, imgCont2, imgCont3, imgCont4, imgCont5];
   
-  let title1 = document.getElementById('title1');
-  let title2 = document.getElementById('title2');
-  let title3 = document.getElementById('title3');
-  let title4 = document.getElementById('title4');
-  let title5 = document.getElementById('title5');
+//   let title1 = document.getElementById('title1');
+//   let title2 = document.getElementById('title2');git add 
+//   let title3 = document.getElementById('title3');
+//   let title4 = document.getElementById('title4');
+//   let title5 = document.getElementById('title5');
 
-  let titleArray = [title1, title2, title3, title4, title5];
+//   let titleArray = [title1, title2, title3, title4, title5];
+
+function pushResults() {
+  const numCards = 5;
+  const imgContArry = []
+  const titleArray = [];
+
+   for (let i = 1; i <= numCards; i++) {
+    const imgCont = document.getElementById(`card${i}`);
+    const title = document.getElementById(`title${i}`);
+    imgContArry.push(imgCont);
+    titleArray.push(title);
+  }
 
 
   // Get movieSearchResults from local storage
