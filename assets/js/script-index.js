@@ -2,7 +2,7 @@ var movieClicker = document.getElementById('button1')
 const userInput = document.getElementById('search');
 const selector = document.getElementById('searchType')
 
-//code selects the search button element and all the card elements, and adds an event listener to the search button that changes the display property of each card to block when the button is clicked.
+
 const searchButton = document.getElementById("button1");
 const cards = document.querySelectorAll(".card");
 
@@ -83,12 +83,14 @@ function pushResults() {
   }
 
 
-  // Get movieSearchResults from local storage
+  
   let movieSearchResults = JSON.parse(localStorage.getItem('movieSearchResults'));
+
   console.log(movieSearchResults);
+  
   // Loop over the elements with the URLs
   for (let i = 0; i < imgContArry.length; i++) {
-    // Check if the movieSearchResults array has enough items to populate all the cards
+   
     if (movieSearchResults && movieSearchResults.results.length > i && movieSearchResults.results[i].poster_path) {
       imgContArry[i].src = `https://image.tmdb.org/t/p/original/${movieSearchResults.results[i].poster_path}`;
     } else {
@@ -96,14 +98,15 @@ function pushResults() {
     }
   }
   for (let i = 0; i < titleArray.length; i++) {
-    // Check if the movieSearchResults array has enough items to populate all the titles
+   
     if (movieSearchResults && movieSearchResults.results.length > i && movieSearchResults.results[i].title) {
       titleArray[i].textContent = movieSearchResults.results[i].title;
     } else {
-      titleArray[i].textContent = ''; // Set empty text if no title is available
+      titleArray[i].textContent = ''; 
     }
   }
 }
+
 
 // Get streaming services
 $(".stream-btn").click(function() {
@@ -166,14 +169,6 @@ function storeMovie(event) {
     like: true
   }
 
-  myStoredMovies.unshift(movieItem);
-  localStorage.setItem('myMovies', JSON.stringify(myStoredMovies));
-}
-var movieElements = document.querySelectorAll(".movie");
-movieElements.forEach(function(movieElement) {
-  movieElement.addEventListener('click', storeMovie);
-});
-*/
 
 $(".store-loved-btn").click(function() {
   var title = $(this).siblings("h3").text();
@@ -234,4 +229,3 @@ $(".store-want-btn").click(function() {
   localStorage.setItem("wantMovies", JSON.stringify(wantMovies));
 });
 
-//
