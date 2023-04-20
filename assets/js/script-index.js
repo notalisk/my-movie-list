@@ -143,7 +143,7 @@ $(".store-loved-btn").click(function() {
     rating: rating, 
   }
 
-  var seenMovies = JSON.parse(localStorage.getItem("lovedMovies"))||[]
+  var seenMovies = JSON.parse(localStorage.getItem("seenMovies"))||[]
 
   if (seenMovies.length == null) {
     seenMovies = [seenMovie];
@@ -165,7 +165,7 @@ $(".store-hated-btn").click(function() {
     rating: rating, 
   }
 
-  var seenMovies = JSON.parse(localStorage.getItem("hateMovies"))||[]
+  var seenMovies = JSON.parse(localStorage.getItem("seenMovies"))||[]
 
   if (seenMovies.length == null) {
     seenMovies = [seenMovie];

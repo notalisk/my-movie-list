@@ -64,7 +64,7 @@ heartIcons.forEach((heartIcon, index) => {
 }); ///idk i hope you guys liked that part
 
 //seen it love element 
-let seenItStorageArry= localStorage.getItem("lovedMovies")
+let seenItStorageArry= localStorage.getItem("seenMovies")
 let seenItArry = JSON.parse(seenItStorageArry)
 
 seenIt1elem = document.getElementById('SeenIt1title')
