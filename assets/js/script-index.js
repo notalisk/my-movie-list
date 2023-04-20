@@ -51,25 +51,6 @@ function theClick() {
 
 }
 
-
-// function pushResults() {
-//   // Array for the container elements
-//   let imgCont1 = document.getElementById('card1');
-//   let imgCont2 = document.getElementById('card2');
-//   let imgCont3 = document.getElementById('card3');
-//   let imgCont4 = document.getElementById('card4');
-//   let imgCont5 = document.getElementById('card5');
-
-//   let imgContArry = [imgCont1, imgCont2, imgCont3, imgCont4, imgCont5];
-  
-//   let title1 = document.getElementById('title1');
-//   let title2 = document.getElementById('title2');git add 
-//   let title3 = document.getElementById('title3');
-//   let title4 = document.getElementById('title4');
-//   let title5 = document.getElementById('title5');
-
-//   let titleArray = [title1, title2, title3, title4, title5];
-
 function pushResults() {
   const numCards = 5;
   const imgContArry = []
@@ -136,24 +117,6 @@ $(".stream-btn").click(function() {
     .catch(err => console.error(err));
 });
 
-//// fetch for later 
-//const options1 = {
-// method: 'GET',
-//  headers: {
-//    'X-RapidAPI-Key': 'b4653a9300msh9edce1d2439a532p1ecf5ejsn6f47fc20c7fd',
-//    'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
-//  }
-//};
-
-// need a function that calls this api when the div container to the result is clicked 
-//fetch(`https://streaming-availability.p.rapidapi.com/v2/search/title?title=${(variable that takes the title info)}& country=us & show_type=movie & output_language=en`, options)
-//	.then(response => response.json())
-//	.then(response => console.log(response))
-//	.catch(err => console.error(err));
-
-
-
-/*
 let myStoredMovies = [];
 
 function storeMovie(event) {
@@ -168,7 +131,7 @@ function storeMovie(event) {
     title: movTitle,
     like: true
   }
-
+}
 
 $(".store-loved-btn").click(function() {
   var title = $(this).siblings("h3").text();
@@ -192,7 +155,7 @@ $(".store-loved-btn").click(function() {
 
 $(".store-hated-btn").click(function() {
   var title = $(this).siblings("h3").text();
-  //console.log(title);
+
   var rating = $(this).siblings("input").val();
   
   var seenMovie = {
@@ -228,4 +191,3 @@ $(".store-want-btn").click(function() {
 
   localStorage.setItem("wantMovies", JSON.stringify(wantMovies));
 });
-
