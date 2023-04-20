@@ -1,3 +1,6 @@
+
+
+
 h1 {
     display: flex;
     justify-content: center;
@@ -11,4 +14,9 @@ img {
 form {
   width: 25%;
   margin: auto;
+}
+
+.card-img {
+  width: 160px;
+  height: 170px;
 }
