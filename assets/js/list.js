@@ -63,7 +63,8 @@ heartIcons.forEach((heartIcon, index) => {
   });
 }); ///idk i hope you guys liked that part
 
-//seen it element 
+//seen it love element 
+let seenItStorageArry= localStorage.getItem("lovedMovies")
 let seenItArry = JSON.parse(seenItStorageArry)
 
 seenIt1elem = document.getElementById('SeenIt1title')
@@ -82,9 +83,10 @@ seenItArry.forEach(function(obj, index) {
     seenItElemsArry[index].value = obj.title;
   }
 });
-
+//seen it hate movie
 ///tv show objects and lists and function over object value
-
+let hateItStorageArry= localStorage.getItem("hateMovies")
+let hateItArry = JSON.parse(seenItStorageArry)
 SeenTvElem1 = document.getElementById('seenTv1Title')
 SeenTvElem2 = document.getElementById('seenTv2Title')
 SeenTvElem3 = document.getElementById('seenTv3Title')
@@ -104,6 +106,8 @@ SeenTvDataArry.forEach(function(obj, index) {
 });
 
 ///functions for the gotta see it Tv elements 
+let wantItStorageArry= localStorage.getItem("wantMovies")
+let wantItArry = JSON.parse(seenItStorageArry)
 
 gottaSeeTvElem1 = document.getElementById('gottaSeeTv1Title')
 gottaSeeTvElem2 = document.getElementById('gottaSeeTv2Title')
