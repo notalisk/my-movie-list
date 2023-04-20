@@ -1,24 +1,34 @@
-# Movie Watchlist Web App
+# ReelGood movie database
 
-This is a web application that allows users to search for movies, add them to their watchlist, and view the streaming platform where the movie is available. The app is built using [insert technology stack here].
+The ReelGood movie database app provides users with a comprehensive and user-friendly platform to search for movies and manage their movie watching activities. Its primary objective is to enhance users' overall movie viewing experience by making it easy for them to find and explore new movies. The app's features, such as the love it or hate it rating system, help users keep track of their movie preferences and make better-informed decisions when choosing what to watch next.
 
 ## Features
+- **Movie Search:** Users can search for movies using keywords or movie titles in the search bar and rate the movies they have seen directly on the search screen using "Seen it(Love it)" and "Seen it(Hate it)".
 
-- **Movie Search:** Users can search for movies using the app's search functionality. They can enter keywords or movie titles in the search bar and click the search button to get results.
-- **Watchlist:** Users can add movies to their watchlist by clicking the "Add to Watchlist" button on the movie details page. The movies added to the watchlist are stored in the app's database and can be viewed later.
-- **Streaming Platform Information:** The app provides information about the streaming platforms where a movie is available. Users can see which streaming platforms are currently streaming the movie they are interested in.
+- **Watchlist:** Users can add movies to their watchlist and view them later. They can also rate movies as "Reel-y Love it" or "Reel-y Hate it" to keep track of their movie preferences.
+
+- **Streaming Platform Information:** Users can conveniently view the streaming platforms currently offering the movie from the search results page, saving them time and effort when identifying where to watch the movie.
+
+- **Concept:** The ReelGood movie database app was born out of the creator's love for movies and the desire to keep track of their preferences. The app aims to provide a streamlined and user-friendly experience for movie enthusiasts, enabling them to easily discover, track, and enjoy their favorite movies.
 
 
 
+## Installation
 
-## Usage
+Follow these steps to set up the Movie Watchlist web app on your local machine:
+
+- Clone the repository from GitHub: `git clone [git@github.com:notalisk/my-movie-list.git]`
+
+
+ ## Instructions.  <!--(ADD IMAGES) -->
 
 Here's how you can use the Movie Watchlist web app:
 
 1. Search for Movies:
    - Enter keywords or movie titles in the search bar and click the search button.
-   - View the search results, which display movie details such as title, release year, and streaming platform information.
+   - View the search results, which display movie details such as title, and streaming platform information.
    - Click on a movie to view its details page.
+   - Rate the movies on this screen by "Seen it(Love it) or "Seen it(Hate it)"
 
 2. Add Movies to Watchlist:
    - On the movie details page, click the "Add to Watchlist" button to add the movie to your watchlist.
@@ -26,12 +36,14 @@ Here's how you can use the Movie Watchlist web app:
 
 3. View Watchlist:
    - Click on the "Watchlist" link in the navigation bar to view the movies in your watchlist.
-   - The watchlist page displays the movies you have added, including their details and streaming platform information.
+   - The watchlist page displays the movies titles you have added.
+   - Rate the movies on this list screen with "Reel-y Love it" or "Reel-y Hate it"
+
 
 ## Technologies Used
 
-- A vast majority of this code was developed using VScode. 
-- Initial design was sketched on google slides
+- This code was developed in VScode using HTML, CSS, JavaScript, JQuery and Materialize. 
+- Initial design was sketched on Excalidraw
 
 ## APIs Used
 
@@ -42,17 +54,20 @@ Here's how you can use the Movie Watchlist web app:
 - Streaming availability is made possible through 'Watchmode'
 "https://rapidapi.com/meteoric-llc-meteoric-llc-default/api/watchmode/"
 
-## Installation
 
-Follow these steps to set up the Movie Watchlist web app on your local machine:
+## Wire Frame
+![Wire_Frame_ReelGood](./assets/Images/Wireframe_ReelGood.png)
 
-- Clone the repository from GitHub: `git clone [git@github.com:notalisk/my-movie-list.git]`
+
+
+
 
 ## Contributors
-Ellen Kolbly
-Christian Asberry
-Frank Orona
-Edward Wells
+\
+-Ellen Kolbly: <https://github.com/notalisk> \
+-Christian Asberry:  <https://github.com/Cristian01021>\
+-Frank Orona: <https://github.com/Oronafrankie87>\
+-Edward Wells: <https://github.com/Edwardwells87>
 
 ## License
 
@@ -83,3 +98,4 @@ SOFTWARE.
 https://github.com/notalisk/my-movie-list
 
 - Live App
+
