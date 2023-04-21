@@ -52,6 +52,7 @@ function appendSeens() {
     var tdLove = document.createElement("td");
     var tdHate = document.createElement("td");
     tdLove.textContent = "❤️";
+    tdLove.className = "red-heart";
     tdHate.textContent = "👎";
     // hide stuff depending on love/hate
     if (seenMovies[i].like == true) {
