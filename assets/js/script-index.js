@@ -97,7 +97,7 @@ $(".stream-btn").click(function() {
   const options = {
     method: 'GET',
     headers: {
-      'X-RapidAPI-Key': '23ba83f50amsh2809e1dd2658e65p1653c7jsnd62035b3967b',
+      'X-RapidAPI-Key': 'fb546c8031mshb0ab64a05e5dbf8p143f97jsn01b83cf86798',
       'X-RapidAPI-Host': 'streaming-availability.p.rapidapi.com'
     }
   };
