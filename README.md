@@ -60,7 +60,11 @@ Here's how you can use the Movie Watchlist web app:
 
 
 
+## Screenshots
 
+![Screenshot_ReelGood_Search_Page](./assets/Images/screencapture-notalisk-github-io-my-movie-list-index-html-2023-04-21-09_53_10.png)
+
+![Screenshot_ReelGood_List_Page](./assets/Images/screencapture-notalisk-github-io-my-movie-list-list-html-2023-04-21-09_54_33.png)
 
 ## Contributors
 \
@@ -97,5 +101,5 @@ SOFTWARE.
 - Repository: 
 https://github.com/notalisk/my-movie-list
 
-- Live App
-
+- Live App:
+https://notalisk.github.io/my-movie-list/index.html
