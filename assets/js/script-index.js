@@ -50,7 +50,7 @@ function theClick() {
 
 
 }
-
+//The following code (line 54-64) was explained by a tutor and replaced original code that was entered.  It was put through ChatGPT to deconstruct and understand better
 function pushResults() {
   const numCards = 5;
   const imgContArry = []
